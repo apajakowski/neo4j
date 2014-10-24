@@ -1,9 +1,9 @@
-Neo4j
+Neo4j - przykladowa baza
 =====
 
 ### Stworzenie bazy
 
-```neo4j
+```
 CREATE 
 	(_1:Id {name:"Piwo"}),
 	(_2:Id {name:"Lager"}),
@@ -42,7 +42,7 @@ CREATE
 
 ### Wyswietlenie grafu
 
-```neo4j
+```
 MATCH (n) RETURN n;
 ```
 
@@ -52,7 +52,7 @@ MATCH (n) RETURN n;
 #### Wyswietl jakie piwa naleza do jakiego rodzaju
 Trzeba ustawic node_auto_indexing na true. [Instrukcja](http://neo4j.com/docs/stable/rest-api-configurable-auto-indexes.html)
 
-```neo4j
+```
 START piwa=node:node_auto_index(name='Piwo')
 MATCH piwa<-[:JEST]-typ<-[:JEST]-piwo
 RETURN typ.name AS rodzaj, count(*) AS ilosc, collect(piwo.name) AS piwa
@@ -62,7 +62,7 @@ RETURN typ.name AS rodzaj, count(*) AS ilosc, collect(piwo.name) AS piwa
 
 #### Pokaz piwa nalezace do pilzner
 
-```neo4j
+```
 MATCH (pilzner { name:'Pilzner' })<-[r:JEST]-(piwa)
 RETURN r
 ```
@@ -71,7 +71,7 @@ RETURN r
 
 #### Pokaz piwa zaczynajace sie od Koz
 
-```neo4j
+```
 MATCH (n)
 WHERE n.name =~ 'Koz.*'
 RETURN n
