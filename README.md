@@ -48,6 +48,7 @@ MATCH (n) RETURN n;
 
 ### Przyklady zapytan do bazy
 #### Wyswietl jakie piwa naleza do jakiego rodzaju
+Trzeba ustawic node_auto_indexing na true. [Instrukcja](http://neo4j.com/docs/stable/rest-api-configurable-auto-indexes.html)
 ```
 START piwa=node:node_auto_index(name='Piwo')
 MATCH piwa<-[:JEST]-typ<-[:JEST]-piwo
