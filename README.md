@@ -67,3 +67,12 @@ RETURN r
 
 ![4](images/4.jpg)
 
+#### Pokaz piwa zaczynajace sie od Koz
+```
+MATCH (n)
+WHERE n.name =~ 'Koz.*'
+RETURN n
+```
+
+![5](images/5.jpg)
+
