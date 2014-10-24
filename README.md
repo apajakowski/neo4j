@@ -49,7 +49,7 @@ MATCH (n) RETURN n;
 ![2](images/2.jpg)
 
 ### Przyklady zapytan do bazy
-#### Wyswietl jakie piwa naleza do jakiego rodzaju
+#### Wyswietl jakie piwa naleza do jakiego rodzaju i podlicz ich ilosc
 Trzeba ustawic node_auto_indexing na true. [Instrukcja](http://neo4j.com/docs/stable/rest-api-configurable-auto-indexes.html)
 
 ```
