@@ -38,13 +38,15 @@ CREATE
 	(_16)-[:JEST]->(_13)
 ```
 
+![1](images/1.jpg)
+
 ### Wyswietlenie grafu
 
 ```
 MATCH (n) RETURN n;
 ```
 
-![1](images/1.jpg)
+![2](images/2.jpg)
 
 ### Przyklady zapytan do bazy
 #### Wyswietl jakie piwa naleza do jakiego rodzaju
@@ -55,7 +57,7 @@ MATCH piwa<-[:JEST]-typ<-[:JEST]-piwo
 RETURN typ.name AS rodzaj, count(*) AS ilosc, collect(piwo.name) AS piwa
 ```
 
-![2](images/2.jpg)
+![3](images/3.jpg)
 
 #### Pokaz piwa nalezace do pilzner
 ```
@@ -63,5 +65,5 @@ MATCH (pilzner { name:'Pilzner' })<-[r:JEST]-(piwa)
 RETURN r
 ```
 
-![3](images/3.jpg)
+![4](images/4.jpg)
 
