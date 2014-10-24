@@ -1,7 +1,7 @@
 Neo4j
 =====
 
-# 1.Stworzenie bazy
+### Stworzenie bazy
 
 ```
 CREATE 
