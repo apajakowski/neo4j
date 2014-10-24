@@ -37,3 +37,30 @@ CREATE
 	(_15)-[:JEST]->(_13),
 	(_16)-[:JEST]->(_13)
 ```
+
+### Wyswietlenie grafu
+
+```
+MATCH (n) RETURN n;
+```
+
+![1](images/1.jpg)
+
+### Przyklady zapytan do bazy
+#### Wyswietl jakie piwa naleza do jakiego rodzaju
+```
+START piwa=node:node_auto_index(name='Piwo')
+MATCH piwa<-[:JEST]-typ<-[:JEST]-piwo
+RETURN typ.name AS rodzaj, count(*) AS ilosc, collect(piwo.name) AS piwa
+```
+
+![2](images/2.jpg)
+
+#### Pokaz piwa nalezace do pilzner
+```
+MATCH (pilzner { name:'Pilzner' })<-[r:JEST]-(piwa)
+RETURN r
+```
+
+![3](images/3.jpg)
+
